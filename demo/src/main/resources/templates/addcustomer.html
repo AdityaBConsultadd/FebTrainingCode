@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Add</title>
+</head>
+<body>
+    <div>
+        <h1>Add Customer</h1>
+        <form th:action="@{/add}" th:object="${customer}" method="post">
+<!--            <div>-->
+<!--                <label for="id">Id</label>-->
+<!--                <input type="number" th:field="*{customerId}" id="id" placeholder="Enter Id">-->
+<!--            </div>-->
+            <div>
+                <label for="name">Name</label>
+                <input type="text" th:field="*{customerName}" id="name" placeholder="Enter name">
+            </div>
+            <div>
+                <label for="Email">Email</label>
+                <input type="text" th:field="*{email}" id="Email" placeholder="Enter mail">
+            </div>
+            <div>
+                <label for="number">Id</label>
+                <input type="number" th:field="*{mobileNo}" id="number" placeholder="Enter Id">
+            </div>
+            <div>
+                <input type="submit" value="Add Customer">
+            </div>
+        </form>
+    </div>
+
+
+</body>
+</html>

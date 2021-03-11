@@ -1,0 +1,1 @@
+INSERT INTO fly.customer VALUES (1,"aditya")

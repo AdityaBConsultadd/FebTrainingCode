@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>
+        <a href="/signup">Add Customer</a>
+    </div>
+    <div th:switch="${customer}">
+        <h2 th:case="null">No data yet</h2>
+        <div th:case="*">
+            <table>
+                <thead>
+                <tr>
+                    <th>CustomerId</th>
+                    <th>CustomerName</th>
+                    <th>Email</th>
+                    <th>MobileNo.</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="d:${customer}">
+                    <td th:text="${d.customerId}"></td>
+                    <td th:text="${d.customerName}"></td>
+                    <td th:text="${d.email}"></td>
+                    <td th:text="${d.mobileNo}"></td>
+                    <td><a th:href="@{edit/{id}(id=${d.customerId})}">edit</a></td>
+                    <td><a th:href="@{delete/{id}(id=${d.customerId})}">delete</a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
